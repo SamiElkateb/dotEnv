@@ -53,8 +53,8 @@
             "commands": ["workbench.action.toggleZenMode"]
         },
         {
-            "before": ["<leader>", "w", "w"],
-            "commands": ["workbench.action.navigateEditorGroups"]
+            "before": ["<leader>", "a"],
+            "commands": ["workbench.action.switchWindow"]
         }
     ]
 }
