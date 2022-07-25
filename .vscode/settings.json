@@ -1,0 +1,60 @@
+{
+    "vim.useSystemClipboard": true,
+    "vim.leader": "<Space>",
+    "vim.insertModeKeyBindingsNonRecursive": [
+        {
+            "before": ["k", "j"],
+            "after": ["<esc>", "l"]
+        }
+    ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["<leader>", "g", "r"],
+            "commands": ["editor.action.goToReferences"]
+        },
+        {
+            "before": ["<leader>", "g", "s"],
+            "commands": ["workbench.action.gotoSymbol"]
+        },
+        {
+            "before": ["<leader>", "g", "t"],
+            "commands": ["editor.action.revealDefinition"]
+        },
+        {
+            "before": ["<leader>", "g", "b"],
+            "commands": ["workbench.action.navigateBack"]
+        },
+        {
+            "before": ["<leader>", "r", "r"],
+            "commands": ["editor.action.rename"]
+        },
+        {
+            "before": ["<leader>", "f", "f"],
+            "commands": ["editor.action.formatDocument"]
+        },
+        {
+            "before": ["<leader>", "s", "h"],
+            "commands": ["editor.action.showHover"]
+        },
+        {
+            "before": ["<tab>"],
+            "commands": ["workbench.action.nextEditor"]
+        },
+        {
+            "before": ["<S-tab>"],
+            "commands": ["workbench.action.previousEditor"]
+        },
+        {
+            "before": ["<leader>", "t", "t"],
+            "commands": ["workbench.action.tasks.test"]
+        },
+        {
+            "before": ["<leader>", "z", "e", "n"],
+            "commands": ["workbench.action.toggleZenMode"]
+        },
+        {
+            "before": ["<leader>", "w", "w"],
+            "commands": ["workbench.action.navigateEditorGroups"]
+        }
+    ]
+}
