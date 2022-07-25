@@ -55,6 +55,10 @@
         {
             "before": ["<leader>", "a"],
             "commands": ["workbench.action.switchWindow"]
+        },
+        {
+            "before": ["<leader>", "n", "e"],
+            "commands": ["editor.action.marker.nextInFiles"]
         }
     ]
 }
