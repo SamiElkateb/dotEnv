@@ -2,7 +2,7 @@
     "Arrow Function": {
         "scope": "javascript",
         "prefix": "arf",
-        "body": ["const ${1:newFunc} = (${2:param}) => {\n\t$3\n}"],
+        "body": ["const ${1:newFunc} = (${2:param}) => {", "\t$3", "}"],
         "description": "Arrow function"
     }
 }

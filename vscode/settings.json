@@ -1,6 +1,7 @@
 {
     "vim.useSystemClipboard": true,
     "vim.leader": "<Space>",
+    "vim.ignorecase": false,
     "vim.insertModeKeyBindingsNonRecursive": [
         {
             "before": ["k", "j"],
@@ -13,12 +14,24 @@
             "commands": ["editor.action.goToReferences"]
         },
         {
+            "before": ["<leader>", "f", "i"],
+            "commands": ["references-view.findImplementations"]
+        },
+        {
             "before": ["<leader>", "g", "s"],
             "commands": ["workbench.action.gotoSymbol"]
         },
         {
+            "before": ["<leader>", "s", "s"],
+            "commands": ["workbench.action.showAllSymbols"]
+        },
+        {
             "before": ["<leader>", "g", "t"],
             "commands": ["editor.action.revealDefinition"]
+        },
+        {
+            "before": ["<leader>", "g", "f"],
+            "commands": ["workbench.action.navigateForward"]
         },
         {
             "before": ["<leader>", "g", "b"],
