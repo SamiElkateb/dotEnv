@@ -2,6 +2,9 @@
 
 installDependencies(){
     standard_install ripgrep
+    if [[ $platform == 'windows' ]] ; then
+        choco_install mingw
+    fi
 }
 
 customizeNeovim(){ 

@@ -14,4 +14,6 @@ installNerdFont(){
     elif [[ $platform == 'windows' ]] ; then
         ./install.ps1 hack
     fi
+    cd
+    rm -rf  ~/.bash_install_temp
 }

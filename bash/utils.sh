@@ -14,7 +14,7 @@ choco_install() {
     if choco list -lo | grep $1 &>/dev/null; then
         echo "${1} is already installed"
     else
-        choco install $1 && echo "$1 is installed"
+        choco install $1 -y && echo "$1 is installed"
     fi
 }
 
