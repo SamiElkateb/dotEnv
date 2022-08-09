@@ -1,22 +1,24 @@
 #!/usr/bin/env bash
 
 addSourceZshrc(){
-    grep "source $HOME/.config/zsh/.zshrc" ~/.zshrc
+    grep "/.config/zsh/.zshrc" ~/.zshrc &>/dev/null
     if [[ $? != 0 ]] ; then
         if [[ $platform == 'mac' ]] ; then
-            cat "source $HOME/.config/zsh/.zshrc" > ~/.zshrc 
+            echo "source $HOME/.config/zsh/.zshrc" >> ~/.zshrc
+            source ~/.zshrc &>/dev/null
         elif [[ $platform == 'linux' ]] ; then
-            cat "source $HOME/.config/zsh/.zshrc" > ~/.zshrc 
+            echo "source $HOME/.config/zsh/.zshrc" >> ~/.zshrc
+            source ~/.zshrc &>/dev/null
         elif [[ $platform == 'windows' ]] ; then
             echo "Windows not supported for zsh yet"
         fi
     else
-        echo "zsh already installed"
+        echo "zsh already customized"
     fi
 }
 
 customizeZsh(){
-    test -f ~/.conf/zsh/.zshrc
+    test -f ~/.config/zsh/.zshrc
     if [[ $? != 0 ]] ; then
         if [[ $platform == 'mac' ]] ; then
             cd ~
@@ -36,7 +38,7 @@ customizeZsh(){
             echo "Windows not supported for zsh yet"
         fi
     else
-        echo "zsh already installed"
+        echo "zsh already customized"
     fi
 }
 

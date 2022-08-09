@@ -1,35 +1,40 @@
 #!/usr/bin/env bash
 
-dependencies(){
-    if [[ $platform == 'mac' ]] ; then
-        brew install ripgrep
-    elif [[ $platform == 'linux' ]] ; then
-        sudo apt-get install ripgrep
-    elif [[ $platform == 'windows' ]] ; then
-        choco install ripgrep
-    fi
+installDependencies(){
+    standard_install ripgrep
 }
-customizeNeovim(){
-    cd ~
-    mkdir -p .config
-    cd .config
-    mkdir -p nvim
+
+customizeNeovim(){ 
     if [[ $platform == 'mac' ]] ; then
-        git clone https://github.com/SamiElkateb/neovim.git ~/.config/nvim
+        test -f ~/.config/nvim/init.lua
+        if [[ $? != 0 ]] ; then
+            cd ~
+            mkdir -p .config
+            cd .config
+            mkdir -p nvim
+            git clone https://github.com/SamiElkateb/neovim.git ~/.config/nvim
+        fi
     elif [[ $platform == 'linux' ]] ; then
-        git clone https://github.com/SamiElkateb/neovim.git ~/.config/nvim
+        test -f ~/.config/nvim/init.lua
+        if [[ $? != 0 ]] ; then
+            cd ~
+            mkdir -p .config
+            cd .config
+            mkdir -p nvim
+            git clone https://github.com/SamiElkateb/neovim.git ~/.config/nvim
+        fi
     elif [[ $platform == 'windows' ]] ; then
-        git clone https://github.com/SamiElkateb/neovim.git $LOCALAPPDATA/nvim
+        test -f $LOCALAPPDATA/nvim/init.lua
+        if [[ $? != 0 ]] ; then
+            cd $LOCALAPPDATA
+            mkdir -p nvim
+            git clone https://github.com/SamiElkateb/neovim.git $LOCALAPPDATA/nvim
+        fi
     fi
 }
 
 installNeovim(){
-    if [[ $platform == 'mac' ]] ; then
-        brew_install neovim 
-    elif [[ $platform == 'linux' ]] ; then 
-        yes | sudo apt install neovim
-    elif [[ $platform == 'windows' ]] ; then
-        choco install neovim
-    fi
+    standard_install neovim
     customizeNeovim
+    installDependencies
 }
