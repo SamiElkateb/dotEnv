@@ -23,7 +23,7 @@ apt_install() {
     if dpkg -l $1 &>/dev/null; then
         echo "${1} is already installed"
     else
-        yes | sudo install $1 && echo "$1 is installed"
+        yes | sudo apt-get install $1 && echo "$1 is installed"
     fi
 }
 

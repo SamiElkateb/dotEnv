@@ -1,18 +1,12 @@
 #!/usr/bin/env bash
 
 installVSCode(){
-    which code
-    if [[ $? != 1 ]] ; then
-        if [[ $platform == 'mac' ]] ; then
-            brew install --cask visual-studio-code
-        elif [[ $platform == 'linux' ]] ; then
-            yes | sudo apt install neovim
-        elif [[ $platform == 'windows' ]] ; then
-            choco install vscode -y
-        fi
-
-    else
-        echo "vscode already installed"
+    if [[ $platform == 'mac' ]] ; then
+        brew_install visual-studio-code
+    elif [[ $platform == 'linux' ]] ; then
+        echo "VSCode installation not configured for linux yet"
+    elif [[ $platform == 'windows' ]] ; then
+        choco_install vscode
     fi
 }
 

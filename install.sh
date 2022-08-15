@@ -14,21 +14,21 @@ if [[ $platform == 'mac' ]] ; then
 elif [[ $platform == 'linux' ]] ; then
     installLinuxSpecific
 elif [[ $platform == 'windows' ]] ; then
-    echo "Windows not supported yet"
+    installWindowsSpecific
 fi
 
-if($INSTALL_NEOVIM) ; then
+standard_install jq
+
+SHOULD_INSTALL=$(cat "$iwd/install.json" | jq -r ".global.neovim")
+if($SHOULD_INSTALL == 'true') ; then
+    echo 'should install neovim'
     installNeovim
 fi
 
-if($CUSTOMIZE_ZSH) ; then
-    customizeZsh
+SHOULD_INSTALL=$(cat "$iwd/install.json" | jq -r ".config.apply")
+if($SHOULD_INSTALL == 'true') ; then
+    echo 'should apply config'
+    applyConfig
+    echo 'apply config'
 fi
 
-if($INSTALL_RIPGREP) ; then
-    standard_install ripgrep
-fi
-
-if($INSTALL_NERDFONT) ; then
-    installNerdFont
-fi

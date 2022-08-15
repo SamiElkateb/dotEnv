@@ -1,11 +1,12 @@
+
 #!/usr/bin/env bash
 
-installTmux(){
+installFirewall(){
     if [[ $platform == 'mac' ]] ; then
-        brew_install tmux
+        brew_install little-snitch
     elif [[ $platform == 'linux' ]] ; then
-        apt_install tmux
+        echo "No firewall configured for Linux yet"
     elif [[ $platform == 'windows' ]] ; then
-        echo "Windows not supported for tmux yet"
+        choco_install netlimiter
     fi
 }

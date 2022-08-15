@@ -12,7 +12,7 @@ installMacSpecific(){
     
     which xcode-select
     if [[ $? != 0 ]] ; then
-    yes | xcode-select --install
+      yes | xcode-select --install
     else
         echo "xcode command line already installed"
     fi
