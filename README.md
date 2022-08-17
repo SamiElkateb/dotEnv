@@ -1,4 +1,4 @@
-# MacOs
+# MacOS
 ## System Preferences
 ### > Accessibility > Display
 Select Reduce Motion
@@ -17,6 +17,9 @@ Map switch to desktop to CTRL + Number
 Map show spotlight search to ALT + d
 
 # Linux
+
+## Remove Alt + Shift keyboard toggle
+1. Go to /etc/default/keyboard
 
 1. Install firewall: https://github.com/evilsocket/opensnitch
 

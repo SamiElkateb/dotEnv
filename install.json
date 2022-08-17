@@ -1,38 +1,42 @@
 {
   "config": {
-    "apply": true,
+    "apply": false,
     "repository": "https://github.com/SamiElkateb/config.git"
   },
   "global": {
     "vscode": {
-      "install": true,
+      "install": false,
       "version": "release"
     },
     "alacritty": {
-      "install": true,
+      "install": false,
       "version": "release"
     },
     "neovim": {
-      "install": true,
+      "install": false,
       "version": "release"
     },
     "lunarvim": {
-      "install": true,
+      "install": false,
       "version": "release"
     },
     "tmux": {
-      "install": true,
+      "install": false,
       "version": "release"
     },
     "node": {
-      "install": true,
+      "install": false,
       "version": "release"
     },
     "nvm": {
-      "install": true,
+      "install": false,
       "version": "release"
     },
     "firefox": {
+      "install": false,
+      "version": "release"
+    },
+    "lazygit": {
       "install": true,
       "version": "release"
     }
@@ -49,35 +53,35 @@
     "bugN": {
       "install": false,
       "version": "release"
-    },
+    }
   },
   "mac": {
     "yabai": {
-      "install": true,
+      "install": false,
       "version": "release"
     },
     "skhd": {
-      "install": true,
+      "install": false,
       "version": "release"
     },
     "limelight": {
-      "install": true,
+      "install": false,
       "version": "release"
     },
     "littlesnitch": {
-      "install": true,
+      "install": false,
       "version": "release"
-    },
+    }
   },
   "linux": {
     "i3": {
-      "install": true,
+      "install": false,
       "version": "release"
     },
     "opensnitch": {
-      "install": true,
+      "install": false,
       "version": "release"
-    },
+    }
   },
   "dependencies": {
     "git": "release",
